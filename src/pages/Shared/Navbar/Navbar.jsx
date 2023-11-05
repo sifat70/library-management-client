@@ -1,7 +1,14 @@
 import { NavLink } from "react-router-dom";
+import { BiAdjust, BiMoon } from "react-icons/bi";
+import { UseTheme } from "../../../Hook/ChangeTheme";
+
 
 
 const Navbar = () => {
+
+   const {changeTheme, mode} = UseTheme()
+
+
     const navLinks = <>
         <li><NavLink className={({ isActive }) =>
             isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
@@ -17,7 +24,7 @@ const Navbar = () => {
         } to="/borrowedBooks">Borrowed Books</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar   bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,6 +42,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mt-9">
+                <button onClick={changeTheme} className="mr-4 text-3xl">{mode === 'dark' ?<BiAdjust></BiAdjust> :<BiMoon></BiMoon>}</button>
                 <NavLink to="/login"><button className="btn text-white btn-outline btn-success">Login</button></NavLink>
             </div>
         </div>
