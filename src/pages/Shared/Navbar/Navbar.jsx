@@ -1,30 +1,44 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BiAdjust, BiMoon } from "react-icons/bi";
 import { UseTheme } from "../../../Hook/ChangeTheme";
+import { useContext } from "react";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 
 
 const Navbar = () => {
 
-   const {changeTheme, mode} = UseTheme()
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
+    const { changeTheme, mode } = UseTheme()
 
 
     const navLinks = <>
         <li><NavLink className={({ isActive }) =>
             isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
         } to="/">Home</NavLink></li>
-        <li><NavLink className={({ isActive }) =>
-            isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
-        } to="/addBook">Add Book</NavLink></li>
-        <li><NavLink className={({ isActive }) =>
-            isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
-        } to="/allBooks">All Books</NavLink></li>
-        <li><NavLink className={({ isActive }) =>
-            isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
-        } to="/borrowedBooks">Borrowed Books</NavLink></li>
+        {
+            user?.email &&
+            <>
+                <li><NavLink className={({ isActive }) =>
+                    isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+                } to="/addBook">Add Book</NavLink></li>
+                <li><NavLink className={({ isActive }) =>
+                    isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+                } to="/allBooks">All Books</NavLink></li>
+                <li><NavLink className={({ isActive }) =>
+                    isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+                } to="/borrowedBooks">Borrowed Books</NavLink></li></>
+        }
     </>
     return (
-        <div className="navbar   bg-base-100">
+        <div className="navbar  dark:bg-zinc-900 bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -42,8 +56,36 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mt-9">
-                <button onClick={changeTheme} className="mr-4 text-3xl">{mode === 'dark' ?<BiAdjust></BiAdjust> :<BiMoon></BiMoon>}</button>
-                <NavLink to="/login"><button className="btn text-white btn-outline btn-success">Login</button></NavLink>
+                <button onClick={changeTheme} className="mr-4 text-3xl">{mode === 'dark' ? <BiAdjust></BiAdjust> : <BiMoon></BiMoon>}</button>
+                {
+                    !user?.email ?
+                        <Link to={`/login`} >
+                            <button className='btn'>
+                                Login
+                            </button>
+                        </Link  >
+                        :
+                        <div className="dropdown dropdown-end" title={user?.displayName} >
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img className='object-cover' src={user?.photoURL} />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                                <li>
+                                    <button className="justify-between">
+                                        {user?.displayName}
+                                    </button>
+                                </li>
+                                <li><button>
+                                    {user?.email}
+                                </button></li>
+                                <li>
+                                    <button onClick={handleSignOut} >Logout</button>
+                                </li>
+                            </ul>
+                        </div>
+                }
             </div>
         </div>
     );

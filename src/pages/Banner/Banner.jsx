@@ -8,7 +8,7 @@ const Banner = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold">Better Learning Future Starts With Penn</h1>
                         <p className="mb-5">It is a long established fact that reader will be distracted readable content of a page when.</p>
-                        <button className="btn btn-primary">Explore</button>
+                        <button className="btn btn-success">Explore</button>
                     </div>
                 </div>
             </div>
