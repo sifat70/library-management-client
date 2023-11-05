@@ -4,11 +4,17 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     const navLinks = <>
         <li><NavLink className={({ isActive }) =>
-              isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
-            } to="/">Home</NavLink></li>
-        <li><NavLink to="/addBook">Add Book</NavLink></li>
-        <li><NavLink to="/allBooks">All Books</NavLink></li>
-        <li><NavLink to="/borrowedBooks">Borrowed Books</NavLink></li>
+            isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+        } to="/">Home</NavLink></li>
+        <li><NavLink className={({ isActive }) =>
+            isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+        } to="/addBook">Add Book</NavLink></li>
+        <li><NavLink className={({ isActive }) =>
+            isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+        } to="/allBooks">All Books</NavLink></li>
+        <li><NavLink className={({ isActive }) =>
+            isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+        } to="/borrowedBooks">Borrowed Books</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -29,7 +35,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mt-9">
-                <NavLink to="/login"><button className="btn btn-outline btn-success">Login</button></NavLink>
+                <NavLink to="/login"><button className="btn text-white btn-outline btn-success">Login</button></NavLink>
             </div>
         </div>
     );
