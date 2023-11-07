@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 
 const BookCart = ({ book }) => {
     // eslint-disable-next-line react/prop-types
-    const { author, ratting, category,  photo } = book;
+    const { author,  category,  photo } = book;
     return (
         <div className="card  bg-base-100 shadow-xl">
             <figure><img className="w-full h-52" src={photo} alt="Shoes" /></figure>
@@ -19,7 +20,10 @@ const BookCart = ({ book }) => {
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                 </div>
-                <button className="btn btn-block btn-outline btn-success">Details</button>
+                <Link to={`/BookDetails/${book._id}`}
+                    >
+                        <button className="btn btn-block btn-outline btn-success">View Details</button>
+                    </Link>
             </div>
         </div>
     );

@@ -5,12 +5,12 @@ import 'react-photo-view/dist/react-photo-view.css';
 const Gallery = () => {
 
     const images = [
-        'https://hamleysgumlet.gumlet.io/product/491902651/665/491902651-1.jpg',
-        'https://hamleysgumlet.gumlet.io/product/491902622/665/491902622-1.jpg',
-        'https://m.media-amazon.com/images/I/512WUJ5+gwL.jpg',
-        'https://i.ytimg.com/vi/tKjNRVxjeEI/maxresdefault.jpg',
-        'https://www.hasbro.com/common/productimages/en_US/543A8C15AE5748D7B55A529A5CDFAA1A/2c388ca04992d57072b51d53e8281cd058d50223.jpg',
-        'https://m.media-amazon.com/images/I/81Og2S7GIpL._SL1500_.jpg',
+        'https://p16-sign-va.lemon8cdn.com/tos-maliva-v-ac5634-us/79d834c95abb446a9ac6b1547f8f7a21~tplv-tej9nj120t-shrink:1080:0:q50.webp?source=seo_feed_list&x-expires=1728216000&x-signature=imQsRUCBt0GMItBPry3lI70Akm8%3D',
+        'https://www.picclickimg.com/mXgAAOSwC3dlIm5c/The-Far-Side-Gallery-5-by-Gary-Larson.webp',
+        'https://blog-cdn.reedsy.com/directories/gallery/82/large_50c05cfba09243d8b05a251e2205c6ec.jpg',
+        'https://external-preview.redd.it/gallery-of-novel-covers-english-taiwanese-vietnamese-korean-v0-eAn_rela0zTM1wLLYqFRdFzCrFUrI7vDJAsFkxPw_jg.jpg?auto=webp&s=4c0e6fb83d2e04346d056d268ec1b1ae67906883',
+        'https://i.pinimg.com/564x/af/6a/48/af6a487ff263c6a61ade1d4e66d1ac2b.jpg',
+        'https://m.media-amazon.com/images/I/715Nun56IAL._AC_UF1000,1000_QL80_.jpg',
 
     ]
 
