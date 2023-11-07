@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 const AddBooks = () => {
 
@@ -16,24 +17,32 @@ const AddBooks = () => {
         const photo = form.photo.value;
 
 
-        const newBook = {name, quantity, author, ratting, category, description, photo}
+        const newBook = { name, quantity, author, ratting, category, description, photo }
         console.log(newBook)
 
 
 
         // send data to the server
 
-        fetch('http://localhost:5000/book',{
+        fetch('http://localhost:5000/book', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newBook)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "user added successfully",
+                        icon: "success",
+                        confirmButtonText : 'Cool'
+                    });
+                }
+            })
 
 
     }
