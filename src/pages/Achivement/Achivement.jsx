@@ -15,7 +15,7 @@ const Achievement = () => {
                 <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)} >
 
 
-                    <div className='px-40 py-10 counting-section text-center grid grid-cols-3' >
+                    <div className='px-40 py-10 counting-section text-center grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-4' >
                         <div>
                             <h1 className='md:text-4xl text-xl font-semibold'>
                                 {counterOn && <CountUp start={0} end={1000} duration={1.2} delay={0} />}+

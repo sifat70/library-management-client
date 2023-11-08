@@ -21,7 +21,7 @@ const Gallery = () => {
             </div>
             <div className='md:px-[20rem] px-8 mt-10'>
                 <PhotoProvider>
-                    <div className="grid md:grid-cols-3 grid-cols-3 gap-10">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
                         {images.map((item, index) => (
                             <PhotoView key={index} src={item}>
                                 <img className='w-full h-full object-cover shadow-2xl p-3' src={item} alt="" />
