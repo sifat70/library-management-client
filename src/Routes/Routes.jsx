@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         {
             path: "/",
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/book')
+            loader: () => fetch('https://library-management-server-topaz.vercel.app/book')
         },
         {
             path: "addBook",
@@ -28,12 +28,12 @@ const router = createBrowserRouter([
         {
             path:'/BookDetails/:id',
             element:  <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/book/${params.id}`)
+            loader:({params})=>fetch(`https://library-management-server-topaz.vercel.app/book/${params.id}`)
         },
         {
             path: "allBooks",
             element: <AllBooks></AllBooks>,
-            loader: () => fetch('http://localhost:5000/book')
+            loader: () => fetch('https://library-management-server-topaz.vercel.app/book')
         },
         {
             path: "borrowedBooks",

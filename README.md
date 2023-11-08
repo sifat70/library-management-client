@@ -1,8 +1,16 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Server side repo link : https://github.com/Porgramming-Hero-web-course/b8a11-server-side-sifat70
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# live link: https://ome-library.web.app/
+
+
+# 5 Project features
+
+
+
+* add button means you should added new book in home page and one admin its update and delete
+* all books button you see all books is the library
+* all books bottom the set a details button click and see the book 
+* borrowed book means every user borrow any book and return date the book return it
+* whole website responsibe mobile and tablet mode and toggole button dark and light mode 

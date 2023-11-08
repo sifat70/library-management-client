@@ -24,7 +24,7 @@ const AddBooks = () => {
 
         // send data to the server
 
-        fetch('http://localhost:5000/book', {
+        fetch('https://library-management-server-topaz.vercel.app/book', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
