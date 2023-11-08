@@ -23,15 +23,15 @@ const Navbar = () => {
         <li><NavLink className={({ isActive }) =>
             isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
         } to="/">Home</NavLink></li>
+            <li><NavLink className={({ isActive }) =>
+                isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
+            } to="/allBooks">All Books</NavLink></li>
         {
             user?.email &&
             <>
                 <li><NavLink className={({ isActive }) =>
                     isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
                 } to="/addBook">Add Book</NavLink></li>
-                <li><NavLink className={({ isActive }) =>
-                    isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
-                } to="/allBooks">All Books</NavLink></li>
                 <li><NavLink className={({ isActive }) =>
                     isActive ? 'btn btn-success btn-sm text-white' : 'btn btn-ghost btn-sm'
                 } to="/borrowedBooks">Borrowed Books</NavLink></li></>

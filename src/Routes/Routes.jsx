@@ -8,11 +8,13 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import BookDetails from "../pages/BookDetails/BookDetails";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main/>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path: "/",
